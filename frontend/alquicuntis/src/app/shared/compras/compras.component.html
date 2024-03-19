@@ -1,0 +1,20 @@
+<ng-template #content let-modal>
+	<div class="modal-header">
+		<button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<form>
+			<div class="mb-3">
+				<label>Desea comprar este producto: {{nombre}}?</label>
+				<div class="input-group">
+				</div>
+			</div>
+		</form>
+	</div>
+	<div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close(0)">Cancelar</button>
+		<button type="button" class="btn btn-outline-dark" (click)="modal.close(1)">Aceptar</button>
+	</div>
+</ng-template>
+
+<button class="btn btn-lg custom-btn" (click)="open(content)">Comprar</button>

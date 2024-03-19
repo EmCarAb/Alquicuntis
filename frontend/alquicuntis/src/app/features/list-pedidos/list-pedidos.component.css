@@ -1,0 +1,19 @@
+.container {
+  position: relative;
+}
+
+.custom-table {
+  margin-top: 40px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.custom-table td.icon-cell {
+  display: flex;
+  align-items: center;
+}
+
+.custom-thead th{
+  background-color: #212529;
+  color: white;
+}

@@ -1,0 +1,21 @@
+<p>Cualquier problema envíe un correo a: <b>aluguerdemaquinaria@gmail.com</b></p>
+<div class="container mt-5">
+  <table class="table table-bordered border-dark custom-table">
+    <thead class="custom-thead">
+      <tr>
+        <th>Nombre</th>
+        <th>Modelo</th>
+        <th>Precio</th>
+        <th>Fecha</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pedido of listaPedidos; let i = index">
+        <td>{{pedido.producto}}</td>
+        <td>{{pedido.modelo}}</td>
+        <td>{{pedido.precio}}</td>
+        <td>{{pedido.fecha}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

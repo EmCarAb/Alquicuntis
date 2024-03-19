@@ -1,0 +1,64 @@
+<div class="menu-container">
+  <nav class="navbar navbar-expand-sm bg-body-tertiary" id="menu">
+    <div class="container-fluid d-flex justify-content-between">
+      <div class="d-flex">
+        <a class="navbar-brand" href="#">
+          <img src="/assets/img/logoAlquicuntis.png" alt="logo">
+        </a>
+      </div>
+      <div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse whole-navbar" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Máquinas
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#" [routerLink]="['maquinas/0']">Eléctricas</a></li>
+              <li><a class="dropdown-item" href="#" [routerLink]="['maquinas/1']">Gasolina</a></li>
+              <li><a class="dropdown-item" href="#" [routerLink]="['maquinas/2']">Batería</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" routerLink="/reparaciones">Reparaciones</a>
+          </li>
+          <li class="nav-item" *ngIf="authService.isAuthenticated && !authService.isAdmin">
+            <a class="nav-link active" aria-current="page" href="#" routerLink="/list-pedidos">Ver pedidos</a>
+          </li>
+          <li class="nav-item" *ngIf="authService.isAuthenticated && authService.isAdmin">
+            <a class="nav-link active" aria-current="page" href="#" routerLink="/productos">Productos</a>
+          </li>
+          <li class="nav-item" *ngIf="authService.isAuthenticated && authService.isAdmin">
+            <a class="nav-link active" aria-current="page" href="#" routerLink="/usuarios">Usuarios</a>
+          </li>
+          <li class="nav-item" *ngIf="authService.isAuthenticated && authService.isAdmin">
+            <a class="nav-link active" aria-current="page" href="#" routerLink="/solicitudes">Solicitudes</a>
+          </li>
+          <li class="nav-item" *ngIf="authService.isAuthenticated && authService.isAdmin">
+            <a class="nav-link active" aria-current="page" href="#" routerLink="/pedidos">Pedidos</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav login">
+          <li class="nav-item" *ngIf="!authService.isAuthenticated">
+            <button class="nav-link active login" aria-current="page" href="#" routerLink="auth/login">Iniciar
+              Sesión</button>
+          </li>
+          <li class="nav-item" *ngIf="authService.isAuthenticated">
+            <button class="nav-link active logout" aria-current="page" href="#"
+              (click)="logOut()">Cerrar Sesión</button>
+          </li>
+          <li class="nav-item" *ngIf="!authService.isAuthenticated">
+            <button class="nav-link active signin" aria-current="page" href="#"
+              routerLink="auth/signin">Registrarse</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

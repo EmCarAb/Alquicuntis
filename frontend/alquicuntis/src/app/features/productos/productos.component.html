@@ -1,0 +1,29 @@
+<div class="container mt-5">
+  <div class="filter-wrapper">
+    <button type="button" class="icon-button-add" [routerLink]="['/add-productos']">Añadir <i class="bi bi-plus"></i></button>
+  </div>
+  <br>
+  <table class="table table-bordered border-dark custom-table">
+    <thead>
+      <tr>
+        <th>Tipo</th>
+        <th>Nombre</th>
+        <th>Modelo</th>
+        <th>Stock</th>
+        <th>Precio</th>
+        <th colspan=2>Editar/Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let producto of listaProductos; let i = index">
+        <td>{{tipoMaquinas[producto.tipo]}}</td>
+        <td>{{producto.nombre}}</td>
+        <td>{{producto.modelo}}</td>
+        <td>{{producto.stock}}</td>
+        <td>{{producto.precio}}</td>
+        <td><button type="button" class="icon-button" [routerLink]="['/mod-productos/' + producto.id]"><i class="bi bi-pencil-square"></i></button></td>
+        <td><app-mensaje-borrar [id]="producto.id" [nombre]="producto.nombre" (borrar)="loadProducts()"></app-mensaje-borrar></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

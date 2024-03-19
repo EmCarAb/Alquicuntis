@@ -1,0 +1,12 @@
+.custom-btn {
+  background-color: black;
+  color: #FFF35D;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-btn:hover {
+    background-color: #FFF35D;;
+    color: black;
+}

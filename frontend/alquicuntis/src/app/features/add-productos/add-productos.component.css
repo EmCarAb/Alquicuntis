@@ -1,0 +1,62 @@
+.custom-btn {
+  background-color: black;
+  color: #FFF35D;
+}
+
+.custom-label {
+  font-weight: bold;
+}
+
+.custom-card {
+  background-color: rgba(255, 243, 93, 0.3);
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.text-center {
+  margin-top: 20px;
+}
+
+.custom-div {
+  margin: 2em;
+  font-size: 18px;
+}
+
+.custom-input {
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: transparent;
+  border-radius: 0;
+  outline: none;
+}
+
+.custom-select {
+  border: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 0;
+  outline: none;
+}
+
+.custom-checkbox .form-check-input {
+  border: 1px solid black;
+}
+
+.custom-checkbox .form-check-input:checked {
+  background-color: black;
+}
+
+.content {
+  position: relative;
+  margin-top: 40px;
+  padding-left: 40px;
+}
+
+.back-button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+}

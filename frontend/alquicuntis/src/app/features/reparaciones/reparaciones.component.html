@@ -1,0 +1,59 @@
+<div class="custom-div">
+    <p> ¡Gracias por elegir nuestro servicio de reparación! Para iniciar el proceso de reparación, le pedimos que complete los datos necesarios en el formulario proporcionado al final.</p>
+    <p> Le informamos que el precio de la reparación se le proporcionará en el momento en que nuestro mecánico revise su máquina. Se le ofrecerá un presupuesto y usted podrá comparar y decidir que hacer.</p>
+    <p> Es importante tener en cuenta que la máquina será revisada y reparada en nuestro establecimiento. Para agilizar el proceso y evitar cargos adicionales, el cliente deberá traer la máquina al establecimiento donde será reparada. En caso contrario tenemos servicio de recogida que se le abonará al precio final.</p>
+    <p> Se le proporcionará la fecha en la que debe dejar su máquina a nuestro cargo, sin embargo, si en algún momento necesita cambiar la fecha acordada, le proporcionaremos un número de teléfono en el correo para que pueda comunicarse directamente con nuestro mecánico y acordar otra fecha que se adapte mejor a sus necesidades.</p>
+    <p> Si tiene alguna pregunta o necesita más información, no dude en contactarnos a través del correo electrónico o el número de teléfono proporcionado en nuestro sitio web. ¡Gracias por elegirnos para reparar su maquinaria y confiar en nosotros!</p> 
+</div>
+
+<div class="container mt-5 mb-5">
+  <div class="card custom-card">
+    <div class="card-body">
+      <form [formGroup]="solicitudForm">
+        <div class="form-group mb-3">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="custom-label">Nombre</label>
+              <input type="text" class="form-control custom-input" id="inputFirstName" formControlName="nombre_usuario">
+            </div>
+            <div class="col-md-6">
+              <label class="custom-label">Apellidos</label>
+              <input type="text" class="form-control custom-input" id="inputLastName" formControlName="apellidos">
+            </div>
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label class="custom-label">Correo</label>
+          <input type="email" class="form-control custom-input" aria-describedby="emailHelp" formControlName="correo">
+          <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" class="text-danger">
+            <div *ngIf="correo.hasError('required')">El correo es requerido.</div>
+            <div *ngIf="correo.hasError('email')">El correo debe tener un formato válido.</div>
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label class="custom-label">Razón</label>
+          <textarea class="form-control" rows="3" placeholder="Indíque el nombre de la máquina y por que ha dejado de funcionar" formControlName="razon"></textarea>
+        </div>
+        <div class="custom-checkbox mb-3">
+          <label class="custom-label">Método de entrega de la máquina</label><br><br>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="entrega" value="0" formControlName="entrega">
+            <label class="form-check-label" for="inlineCheckbox1">Entregar en local</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="entrega" value="1" formControlName="entrega">
+            <label class="form-check-label" for="inlineCheckbox2">Recoger a domicilio</label>
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label class="custom-label">Dirección</label>
+          <input type="text" class="form-control custom-input" formControlName="direccion">
+          <small>Solo cubra esta información si ha seleccionado "Recoger a domicilio".</small>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn custom-btn" (click)="addSolicitud()">Enviar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

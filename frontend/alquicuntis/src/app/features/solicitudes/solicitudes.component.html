@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <table class="table table-bordered border-dark custom-table">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Correo</th>
+          <th>Razón</th>
+          <th>Entrega</th>
+          <th>Dirección</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let solicitud of listaSolicitudes; let i = index">
+        <tr>
+            <td>{{solicitud.nombre_usuario}}</td>
+            <td>{{solicitud.apellidos}}</td>
+            <td>{{solicitud.correo}}</td>
+            <td class="overflow-cell">{{solicitud.razon}}</td>
+            <td>{{tipoEntrega[solicitud.entrega]}}</td>
+            <td>{{solicitud.direccion}}</td>
+          <td><button type="button" class="icon-button" (click)="deleteSolicitud(solicitud.id)"><i class="bi bi-trash"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

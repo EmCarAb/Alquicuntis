@@ -1,0 +1,18 @@
+<div class="custom-cards">
+  <div *ngFor="let producto of listaProductos; let i = index" class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{URLImagenes + producto.imagen}}" alt="Card image cap">
+    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+      <h5 class="card-title">{{producto.nombre}}</h5>
+      <p class="card-text">{{producto.modelo}}
+      </p>
+      <span class="card-price">{{producto.precio}}€</span>
+      <div *ngIf="producto.stock > 0">
+        <app-compras *ngIf="authService.isAuthenticated" (comprar)="loadProducts()" [id]="producto.id" [nombre]="producto.nombre"></app-compras>  
+        <button type="submit" class="btn btn-lg custom-btn" [routerLink]="['/auth/login']"
+        *ngIf="!authService.isAuthenticated">Comprar</button>
+      </div>
+      <span *ngIf="producto.stock == 0" style="color: red;"><b>Fuera de stock</b></span>
+    </div>
+  </div>
+</div>
+<app-toasts aria-live="polite" aria-atomic="true"></app-toasts>

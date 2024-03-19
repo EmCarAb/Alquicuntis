@@ -1,0 +1,44 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card-body">
+          <h2>Regístrate!</h2>
+          <br>
+          <form [formGroup]='userForm'>
+            <div class="form-group">
+              <label class="custom-label" for="inputName">Nombre</label>
+              <input type="text" class="form-control custom-input" id="inputName" formControlName="nombre">
+            </div>
+            <div class="form-group">
+              <label class="custom-label" for="inputName">Apellidos</label>
+              <input type="text" class="form-control custom-input" id="inputLastName" formControlName="apellidos">
+            </div>
+            <div class="form-group">
+              <label class="custom-label" for="inputName">Usuario</label>
+              <input type="text" class="form-control custom-input" id="inputUsername" formControlName="username">
+            </div>
+            <div class="form-group">
+              <label class="custom-label" for="inputEmail">Correo</label>
+              <input type="email" class="form-control custom-input" id="inputEmail" formControlName="correo">
+              <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" class="text-danger">
+                <div *ngIf="correo.hasError('required')">El correo es requerido.</div>
+                <div *ngIf="correo.hasError('email')">El correo debe tener un formato válido.</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="custom-label" for="inputPassword">Contraseña</label>
+              <input type="password" class="form-control custom-input" id="inputPassword" formControlName="contrasenha">
+            </div>
+            <div *ngIf="contrasenha.invalid && (contrasenha.dirty || contrasenha.touched)" class="text-danger">
+              <div *ngIf="contrasenha.hasError('required')">La contraseña es requerida.</div>
+              <div *ngIf="contrasenha.hasError('passwordRequirements')">La contraseña debe tener al menos 8 caracteres y una letra mayúscula.</div>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn custom-btn" (click)="addUser()">Guardar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

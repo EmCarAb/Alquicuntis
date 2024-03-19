@@ -1,0 +1,20 @@
+<div class="container mt-5">
+  <table class="table table-bordered border-dark custom-table">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Username</th>
+        <th>Correo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of listaUsuarios; let i = index">
+        <td>{{usuario.nombre}}</td>
+        <td>{{usuario.apellidos}}</td>
+        <td>{{usuario.username}}</td>
+        <td>{{usuario.correo}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

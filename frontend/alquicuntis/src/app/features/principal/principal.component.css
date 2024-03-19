@@ -1,0 +1,12 @@
+.custom-div {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#principal-div{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+}

@@ -1,0 +1,26 @@
+<div class="container mt-5">
+  <table class="table table-bordered border-dark custom-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Usuario</th>
+        <th>Correo</th>
+        <th>Producto</th>
+        <th>Modelo</th>
+        <th>Fecha</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pedido of listaPedidos; let i = index">
+        <td>{{pedido.id}}</td>
+        <td>{{pedido.usuario}}</td>
+        <td>{{pedido.correo}}</td>
+        <td>{{pedido.producto}}</td>
+        <td>{{pedido.modelo}}</td>
+        <td>{{pedido.fecha}}</td>
+        <td><button type="button" class="icon-button" (click)="deleteOrders(pedido.id)"><i class="bi bi-trash"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

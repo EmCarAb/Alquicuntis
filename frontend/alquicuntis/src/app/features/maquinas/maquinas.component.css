@@ -1,0 +1,29 @@
+.card {
+  margin: 2em;
+  color: black;
+  background-color: rgba(255, 243, 93, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.custom-btn {
+  background-color: black;
+  color: #FFF35D;
+}
+
+.card-price {
+  color: green;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.custom-cards {
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,49 @@
+<div class="content">
+  <button class="back-button" (click)="goBack()">
+    <i class="bi bi-arrow-left-square"></i>
+  </button>
+</div>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card custom-card">
+        <div class="card-body">
+          <form [formGroup]='productForm'>
+            <div class="form-group">
+              <label class="custom-label">Tipo</label>
+              <select class="form-select custom-input" formControlName="tipo">
+                <option value="0">Eléctrica</option>
+                <option value="1">Gasolina</option>
+                <option value="2">Batería</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="custom-label">Nombre</label>
+              <input type="text" class="form-control custom-input" formControlName="nombre">
+            </div>
+            <div class="form-group">
+              <label class="custom-label">Modelo</label>
+              <input type="text" class="form-control custom-input" formControlName="modelo">
+            </div>
+            <div class="form-group">
+              <label class="custom-label">Precio</label>
+              <input type="number" class="form-control custom-input" id="inputPrice" min="0" formControlName="precio">
+            </div>
+            <div class="form-group">
+              <label class="custom-label">Stock</label>
+              <input type="number" class="form-control custom-input" id="inputStock" min="0" formControlName="stock">
+            </div>
+            <div class="form-group">
+              <label class="custom-label">Selecciona una imagen</label>
+              <input type="file" class="form-control custom-input" formControlName="imagen" (change)="onFileSelected($event)" accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*">
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn custom-btn" (click)="addProduct()">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

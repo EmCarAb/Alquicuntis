@@ -1,0 +1,23 @@
+.custom-label {
+    font-weight: bold;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+  
+.text-center {
+    margin-top: 20px;
+}
+
+.custom-input {
+    width: 100%;
+    padding: 8px;
+    border: 2px solid black;
+}
+
+.custom-button {
+    background-color: black;
+    color: #FFF35D;
+    width: 100%;
+}
