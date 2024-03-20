@@ -1,0 +1,2 @@
+web: venv/Scripts/python.exe main.py
+frontend: npm start
